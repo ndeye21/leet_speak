@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>anagramme</title>
+</head>
+<body>
+    <form action="">
+        <strong> Entrer le premier mot!: </strong><br> <br> 
+        <textarea name="text" id="text" cols="30" rows="6" value=""></textarea>
+        <textarea name="text1" id="text1" cols="30" rows="6" value=""></textarea>
+         <br> <br>
+        <input type="submit" onClick="leet();" />
+       </form>
+   
+       <script>
+
+      function leet()
+           {
+               var text = document.getElementById("text").value;
+               var taille= text.length;
+               var messageLeet = "";
+               var regex = new RegExp("[0-9]");
+               if(regex.test(text)===false){
+                for (var i = 0; i < taille; i++) {
+                if (text[i].toLowerCase() === "l") { messageLeet += "1"; }
+                else if (text[i].toLowerCase() === "e") { messageLeet += "3"; }
+                else if (text[i].toLowerCase() === "a") { messageLeet += "4"; }
+                else if (text[i].toLowerCase() === "b") { messageLeet += "8"; }
+                else if (text[i].toLowerCase() === "h") { messageLeet += "#"; }
+                else if (text[i].toLowerCase() === "t") { messageLeet += "7"; }
+                else if (text[i].toLowerCase() === "s") { messageLeet += "5"; }
+                else if (text[i].toLowerCase() === "o") { messageLeet += "0"; }
+                else { messageLeet +=text[i].toLowerCase(); }
+            }
+        }
+    else{
+        for (var i = 0; i < taille; i++) {
+                if (text[i] === "l") { messageLeet += "1"; }
+                else if (text[i] === "3") { messageLeet += "e"; }
+                else if (text[i] === "4") { messageLeet += "a"; }
+                else if (text[i] === "8") { messageLeet += "b"; }
+                else if (text[i]=== "#") { messageLeet += "h"; }
+                else if (text[i] === "7") { messageLeet += "t"; }
+                else if (text[i] === "5") { messageLeet += "s"; }
+                else if (text[i] === "0") { messageLeet += "0"; }
+                else { messageLeet +=text[i].toLowerCase(); }
+            }
+              
+    }
+             
+                
+               
+  
+            alert(messageLeet);
+              
+            
+
+               
+           } 
+           
+               
+       </script>
+</body>
+</html>
